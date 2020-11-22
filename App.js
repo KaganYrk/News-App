@@ -1,21 +1,50 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView,ScrollView} from 'react-native';
 
+import Buttonn from './components/card';
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start woorking on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    
+    <ScrollView >
+    <SafeAreaView style={styles.container}>
+   
+      <Buttonn 
+     
+     text="Lorem"
+     />
+     <Buttonn 
+     
+     text="İpsum"
+     />
+      <Buttonn 
+     
+     text="Dolor"
+     />
+      <Buttonn 
+     
+     text="Sit"
+     />
+     <Buttonn 
+     
+     text="sadas"
+     />
+     
+     
+    </SafeAreaView>
+    </ScrollView>
+  
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    flexDirection:'column',
+    alignItems:"stretch",
+
+    paddingTop: Platform.OS === 'android' ? 28 : 0
   },
+  
 });
+
