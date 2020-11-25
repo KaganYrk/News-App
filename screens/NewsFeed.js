@@ -20,6 +20,9 @@ export default class NewsFeed extends React.Component{
         
           <View style={styles.container}>
             
+         
+                       
+          
            
                 <Text>Burası Haber Akışı</Text>
                 
