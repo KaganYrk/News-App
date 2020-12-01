@@ -19,14 +19,16 @@ import Newsapi from "../utils/newsapi";
 export default class NewsFeed extends React.Component {
   render() {
     return (
+      <ScrollView >
       <View style={styles.container}>
 
-      <Newsapi country="tr" category="sports"/>
+      <Newsapi country="tr" category="entertainment"/>
         <Button
           title="teste git"
           onPress={() => this.props.navigation.navigate("test")}
         />
       </View>
+      </ScrollView>
     );
   }
 }

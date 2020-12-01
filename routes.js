@@ -35,7 +35,7 @@ function favoriteTabs() {
 function NewsFeedStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="NewsFeed" component={NewsFeed}></Stack.Screen>
+      <Stack.Screen name="NewsFeed" component={NewsFeed} options={{ title: 'Westphalia çöp ülke' }}></Stack.Screen>
       <Stack.Screen name="test" component={test}></Stack.Screen>
     </Stack.Navigator>
   );
