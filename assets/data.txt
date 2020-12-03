@@ -1,0 +1,136 @@
+{
+"status": "ok",
+"totalResults": 10,
+"articles": [
+{
+"source": {
+"id": "techcrunch",
+"name": "TechCrunch"
+},
+"author": "Natasha Mascarenhas",
+"title": "Shop-Ware raises cash as cars make a comeback",
+"description": "Shop-Ware has been waiting for a year like 2020 since 2015. The startup, which sells software to neighborhood automotive shops to digitize their operations, had struggled to capture capital from venture firms. Until recently, its sole major investor was after…",
+"url": "https://techcrunch.com/2020/12/02/shop-ware-raises-cash-as-cars-make-a-comeback/",
+"urlToImage": "https://techcrunch.com/wp-content/uploads/2019/01/GettyImages-958125096.jpg?w=600",
+"publishedAt": "2020-12-02T14:00:54Z",
+"content": "Shop-Ware has been waiting for a year like 2020 since 2015.\r\nThe startup, which sells software to neighborhood automotive shops to digitize their operations, had struggled to capture capital from ven… [+3758 chars]"
+},
+{
+"source": {
+"id": "techcrunch",
+"name": "TechCrunch"
+},
+"author": "Brian Heater",
+"title": "Looking Glass’s next product is a holographic digital photo frame",
+"description": "Looking Glass’s technology is extremely cool, but has, thus far, been prohibitively expensive, ranging from $600 for its 8.9-inch product to $6,000 for the 15-inch model — and an undisclosed sum for its 32-inch 8K display. Portrait might not be the most techn…",
+"url": "https://techcrunch.com/2020/12/02/looking-glasss-next-product-is-a-holographic-digital-photo-frame/",
+"urlToImage": "https://techcrunch.com/wp-content/uploads/2020/11/Azure-Kinect-2.jpg?w=600",
+"publishedAt": "2020-12-02T14:00:29Z",
+"content": "Looking Glasss technology is extremely cool, but has, thus far, been prohibitively expensive, ranging from $600 for its 8.9-inch product to $6,000 for the 15-inch model — and an undisclosed sum for i… [+1741 chars]"
+},
+{
+"source": {
+"id": "techcrunch",
+"name": "TechCrunch"
+},
+"author": "Manish Singh",
+"title": "Jio Platforms backs SF-based AR gaming startup Krikey",
+"description": "Jio Platforms, the biggest telecom operator in India and which has raised over $20 billion from Facebook, Google and other high-profile investors this year, is leading a financing round of a San Francisco-based startup that develops augmented-reality mobile g…",
+"url": "https://techcrunch.com/2020/12/02/jio-platforms-backs-sf-based-ar-gaming-startup-krikey/",
+"urlToImage": "https://techcrunch.com/wp-content/uploads/2020/12/krikey-jio.jpg?w=709",
+"publishedAt": "2020-12-02T13:59:44Z",
+"content": "Jio Platforms, the biggest telecom operator in India and which has raised over $20 billion from Facebook, Google and other high-profile investors this year, is leading a financing round of a San Fran… [+1843 chars]"
+},
+{
+"source": {
+"id": "techcrunch",
+"name": "TechCrunch"
+},
+"author": "Jonathan Shieber",
+"title": "Florida-based logistics provider ShipMonk raises $290 million on the back of rising eCommerce demand",
+"description": "Jan Bednar started ShipMonk with $70,000 in winnings from a string of student business plan competitions and launched the business that just closed on $290 million in new funding from a small warehouse with no air conditioning in the middle of Florida. While …",
+"url": "https://techcrunch.com/2020/12/02/florida-based-logistics-provider-shipmonk-raises-290-million-on-the-back-of-rising-ecommerce-demand/",
+"urlToImage": "https://techcrunch.com/wp-content/uploads/2020/11/GettyImages-1191254826.jpg?w=600",
+"publishedAt": "2020-12-02T13:01:28Z",
+"content": "Jan Bednar started ShipMonk with $70,000 in winnings from a string of student business plan competitions and launched the business that just closed on $290 million in new funding from a small warehou… [+3809 chars]"
+},
+{
+"source": {
+"id": "techcrunch",
+"name": "TechCrunch"
+},
+"author": "Ingrid Lunden",
+"title": "Bizzabo raises $138M for a platform that helps you build and run virtual conferences",
+"description": "Conferences have — for better or worse (and if you’ve ever been trapped in a cavernous CES exhibition hall, you might say worse) — become a significant cornerstone of how industries engage with their audiences, whether they are comics superfans, or iOS develo…",
+"url": "https://techcrunch.com/2020/12/02/bizzabo-raises-138m-for-a-platform-that-helps-you-build-and-run-virtual-conferences/",
+"urlToImage": "https://techcrunch.com/wp-content/uploads/2019/05/GettyImages-539928780.jpg?w=600",
+"publishedAt": "2020-12-02T11:03:02Z",
+"content": "Conferences have — for better or worse (and if you’ve ever been trapped in a cavernous CES exhibition hall, you might say worse) — become a significant cornerstone of how industries engage with their… [+6528 chars]"
+},
+{
+"source": {
+"id": "techcrunch",
+"name": "TechCrunch"
+},
+"author": "Devin Coldewey",
+"title": "Genesis Therapeutics raises $52M A round for its AI-focused drug discovery mission",
+"description": "Sifting through the trillions of molecules out there that might have powerful medicinal effects is a daunting task, but the solution biotech has found is to work smarter, not harder. Genesis Therapeutics has a new simulation approach and cross-disciplinary te…",
+"url": "https://techcrunch.com/2020/12/02/genesis-therapeutics-raises-52m-a-round-for-its-ai-focused-drug-discovery-mission/",
+"urlToImage": "https://techcrunch.com/wp-content/uploads/2018/04/biotech-molecules.jpg?w=587",
+"publishedAt": "2020-12-02T11:02:55Z",
+"content": "Sifting through the trillions of molecules out there that might have powerful medicinal effects is a daunting task, but the solution biotech has found is to work smarter, not harder. Genesis Therapeu… [+5131 chars]"
+},
+{
+"source": {
+"id": "techcrunch",
+"name": "TechCrunch"
+},
+"author": "Natasha Lomas",
+"title": "The UK approves the BioNTech/Pfizer COVID-19 vaccine for emergency use",
+"description": "The UK’s medicines regulator has approved the BioNTech/Pfizer vaccine against COVID-19 for emergency use, the companies said today. The UK is the first country to approve the vaccine for widespread use — paving the way for some of the most “high risk” citizen…",
+"url": "https://techcrunch.com/2020/12/02/the-uk-approves-the-biontech-pfizer-covid-19-vaccine-for-emergency-use/",
+"urlToImage": "https://techcrunch.com/wp-content/uploads/2020/11/GettyImages-1229305401.jpg?w=600",
+"publishedAt": "2020-12-02T09:20:52Z",
+"content": "The UK’s medicines regulator has approved the BioNTech/Pfizer vaccine against COVID-19 for emergency use, the companies said today.\r\nThe UK is the first country to approve the vaccine for widespread … [+2289 chars]"
+},
+{
+"source": {
+"id": "techcrunch",
+"name": "TechCrunch"
+},
+"author": "Steve O'Hear",
+"title": "Monzo, the U.K. challenger bank, picks up additional £60M in funding",
+"description": "Monzo, the U.K. challenger bank now with more than 4.8 million customers, has closed another £60 million in funding, priced the same as and effectively an extension of the its previous top-up round in June. This saw Monzo valued by private investors at around…",
+"url": "https://techcrunch.com/2020/12/02/monzo-the-u-k-challenger-bank-picks-up-additional-60m-in-funding/",
+"urlToImage": "https://techcrunch.com/wp-content/uploads/2020/07/Monzo-Plus-02.jpg?w=527",
+"publishedAt": "2020-12-02T09:15:57Z",
+"content": "Monzo, the U.K. challenger bank now with more than 4.8 million customers, has closed another £60 million in funding, priced the same as and effectively an extension of the its previous top-up round i… [+2516 chars]"
+},
+{
+"source": {
+"id": "techcrunch",
+"name": "TechCrunch"
+},
+"author": "Sarah Perez",
+"title": "Spotify launches '2020 Wrapped' with new features including quizzes, badges and, yes, stories",
+"description": "Spotify is today launching its 2020 Wrapped personalized experience — the company’s popular year-end review of users’ favorite artists, songs, genres, and podcasts. This year, however, Spotify is making a few changes. For starters, Wrapped will be exclusively…",
+"url": "https://techcrunch.com/2020/12/02/spotify-launches-2020-wrapped-with-new-features-including-quizzes-badges-and-yes-stories/",
+"urlToImage": "https://techcrunch.com/wp-content/uploads/2020/12/Summary-share-cards.png?w=711",
+"publishedAt": "2020-12-02T08:01:29Z",
+"content": "Spotify is today launching its 2020 Wrapped personalized experience — the company’s popular year-end review of users’ favorite artists, songs, genres, and podcasts. This year, however, Spotify is mak… [+3773 chars]"
+},
+{
+"source": {
+"id": "techcrunch",
+"name": "TechCrunch"
+},
+"author": "Romain Dillet",
+"title": "Revolut launches early salary feature in the UK and web app",
+"description": "Fintech startup Revolut has two new features this week. First, the company is launching a web app for its regular users — not just business users. Second, in the U.K., Revolut has partnered with Modulr to let you receive your salary a day early. Revolut has h…",
+"url": "https://techcrunch.com/2020/12/01/revolut-launches-early-salary-feature-in-the-uk-and-web-app/",
+"urlToImage": "https://techcrunch.com/wp-content/uploads/2020/12/Web-app-Press_2.png?w=600",
+"publishedAt": "2020-12-02T07:00:53Z",
+"content": "Fintech startup Revolut has two new features this week. First, the company is launching a web app for its regular users not just business users. Second, in the U.K., Revolut has partnered with Modulr… [+1614 chars]"
+}
+]
+}

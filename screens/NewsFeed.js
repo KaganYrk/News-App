@@ -10,19 +10,21 @@ import {
   ActivityIndicator,
   Button,
 } from "react-native";
+import { LinearGradient } from 'expo-linear-gradient';
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import test from "./test";
 import Newsapi from "../utils/newsapi";
+import { max } from "react-native-reanimated";
+
 
 export default class NewsFeed extends React.Component {
   render() {
     return (
       <ScrollView >
       <View style={styles.container}>
-
-      <Newsapi country="tr" category="entertainment"/>
+      <Newsapi country="ng" category="science"/>
         <Button
           title="teste git"
           onPress={() => this.props.navigation.navigate("test")}
@@ -35,7 +37,7 @@ export default class NewsFeed extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "white",
+    backgroundColor: "#ECECEC",
     justifyContent: "center",
   
   },

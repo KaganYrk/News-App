@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Image, SafeAreaView, Text , View} from 'react-native';
 import { FlatList } from 'react-native-gesture-handler';
-
 import Card from '../components/card'
  
 const newsapi = ({country,category}) => {
@@ -20,7 +19,7 @@ const newsapi = ({country,category}) => {
       .json()
       .then(res => setHeadlines(res))
   }
- 
+
   return (
     
     <FlatList
