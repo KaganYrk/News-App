@@ -7,7 +7,7 @@ export default function card({text,item}){
     
     var titlewithoutbrand = (item.title).split("-");
     return(
-    
+        <View>  
             <ImageBackground style={{width:"100%"}}source={{ uri: item.urlToImage }}>    
             <View style={{opacity:0.8,backgroundColor:"black"}} >  
             <Text numberOfLines={2} style={styles.text}>{item.title} </Text>
@@ -17,7 +17,7 @@ export default function card({text,item}){
             </View>
             </View>
             </ImageBackground> 
-     
+            </View>
     );
 }
 

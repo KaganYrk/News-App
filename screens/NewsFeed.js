@@ -24,7 +24,7 @@ export default class NewsFeed extends React.Component {
     return (
       <ScrollView >
       <View style={styles.container}>
-      <Newsapi country="ng" category="science"/>
+      <Newsapi country="TR" category="science"/>
         <Button
           title="teste git"
           onPress={() => this.props.navigation.navigate("test")}

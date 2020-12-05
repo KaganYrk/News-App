@@ -10,7 +10,7 @@ import Buttonn from "./components/card";
 import NewsFeed from "./screens/NewsFeed";
 import test from "./screens/test";
 import Favorites from "./screens/Favorites";
-
+import Login from "./screens/Login"
 const Drawer = createDrawerNavigator();
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -49,7 +49,7 @@ function NewsFeedStack() {
 function FavoritesStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Favorites" component={Favorites}></Stack.Screen>
+      <Stack.Screen name="Favorites" component={Login}></Stack.Screen>
       <Stack.Screen name="test" component={test}></Stack.Screen>
     </Stack.Navigator>
   );
@@ -63,6 +63,10 @@ export default function AppTabNavigation() {
         <Drawer.Screen
           name="Favorites"
           component={favoriteTabs}
+        ></Drawer.Screen>
+        <Drawer.Screen
+          name="Login"
+          component={Login}
         ></Drawer.Screen>
       </Drawer.Navigator>
     </NavigationContainer>
