@@ -15,7 +15,7 @@ import * as SQlite from "expo-sqlite"
 
 const db=SQlite.openDatabase({name : "players.db"});
 
-export default class Login extends React.Component {
+export default class Register extends React.Component {
     state = {
          username:'',
          password:''

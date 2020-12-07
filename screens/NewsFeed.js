@@ -19,22 +19,18 @@ import Newsapi from "../utils/newsapi";
 import { max } from "react-native-reanimated";
 
 
-export default class NewsFeed extends React.Component {
-  render() {
+const  NewsFeed = ({navigation})=>{
+  
     return (
       <ScrollView >
       <View style={styles.container}>
-      <Newsapi country="TR" category="science"/>
-        <Button
-          title="teste git"
-          onPress={() => this.props.navigation.navigate("test")}
-        />
+      <Newsapi  country="tr" category="general" />
       </View>
       </ScrollView>
     );
-  }
+  
 }
-
+export default NewsFeed;
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#ECECEC",

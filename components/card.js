@@ -6,13 +6,14 @@ import * as Font from 'expo-font';
 export default function card({text,item}){
     
     var titlewithoutbrand = (item.title).split("-");
+    var splitsource = (item.source.name).split(".");
     return(
         <View>  
             <ImageBackground style={{width:"100%"}}source={{ uri: item.urlToImage }}>    
             <View style={{opacity:0.8,backgroundColor:"black"}} >  
             <Text numberOfLines={2} style={styles.text}>{item.title} </Text>
             <View style={{flexDirection:"row",justifyContent:"space-between"}}>
-            <Text style={{color:"#E83338",opacity:1,fontWeight:"900",borderRadius:5,marginBottom:10,marginTop:10,fontSize:15,marginLeft:3}}> {item.source.name}</Text>
+            <Text style={{color:"#E83338",opacity:1,fontWeight:"900",borderRadius:5,marginBottom:10,marginTop:10,fontSize:15,marginLeft:3}}> {splitsource[0]}</Text>
             <Text style={{color:"#E83338",marginRight:10,borderRadius:5,marginBottom:10,marginTop:10,fontSize:12,fontSize:12}}> {EditTime(item.publishedAt)}</Text>
             </View>
             </View>

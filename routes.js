@@ -1,72 +1,139 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View, SafeAreaView, ScrollView } from "react-native";
+import { StyleSheet, Text, View, SafeAreaView, ScrollView ,Button} from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createDrawerNavigator } from "@react-navigation/drawer";
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
-import Buttonn from "./components/card";
 import NewsFeed from "./screens/NewsFeed";
 import test from "./screens/test";
-import Favorites from "./screens/Favorites";
-import Login from "./screens/Login"
+import Categories from "./screens/Categories";
+import Register from "./screens/Register"
 const Drawer = createDrawerNavigator();
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
+
+
 function NewsTabs() {
   return (
-    <Tab.Navigator>
-      <Tab.Screen name="NewsFeed" component={NewsFeedStack}></Tab.Screen>
-      <Tab.Screen name="Favorites" component={FavoritesStack}></Tab.Screen>
+    <Tab.Navigator  screenOptions={({ route }) => ({
+      tabBarIcon: ({ focused, color, size }) => {
+        let iconName;
+
+        if (route.name === 'NewsFeed') {
+          iconName = focused
+            ? 'home'
+            :  'home-outline';
+        } else if (route.name === 'Categories') {
+          iconName = focused ? 'view-list' : 'format-list-bulleted';
+        }
+
+        // You can return any component that you like here!
+        return <MaterialCommunityIcons name={iconName} size={20} color={color} />;
+      },
+    })}
+    tabBarOptions={{
+      activeTintColor: 'red',
+      inactiveTintColor: 'black',
+    }}>
+      <Tab.Screen  name="NewsFeed" component={NewsFeedStack} options={{ title:''}} ></Tab.Screen>
+      <Tab.Screen name="Categories"  component={CategoryStack}  options={{ title:''}} ></Tab.Screen>
     </Tab.Navigator>
   );
 }
-function favoriteTabs() {
+function CategoryTabs() {
   return (
-    <Tab.Navigator initialRouteName="Favorites">
-      <Tab.Screen name="NewsFeed" component={NewsFeedStack}></Tab.Screen>
-      <Tab.Screen name="Favorites" component={FavoritesStack}></Tab.Screen>
+    <Tab.Navigator initialRouteName="NewsFeed" screenOptions={({ route }) => ({
+      tabBarIcon: ({ focused, color, size }) => {
+        let iconName;
+
+        if (route.name === 'NewsFeed') {
+          iconName = focused
+            ? 'home'
+            :  'home-outline';
+        } else if (route.name === 'Categories') {
+          iconName = focused ? 'view-list' : 'format-list-bulleted';
+        }
+
+        // You can return any component that you like here!
+        return <MaterialCommunityIcons name={iconName} size={20} color={color} />;
+      },
+    })}
+    tabBarOptions={{
+      activeTintColor: 'red',
+      inactiveTintColor: 'black',
+    }}>
+      <Tab.Screen name="NewsFeed" component={NewsFeedStack} options={{ title:''}} ></Tab.Screen>
+      <Tab.Screen name="Categories" component={CategoryStack}  options={{ title:''}}></Tab.Screen>
     </Tab.Navigator>
   );
 }
 
-function NewsFeedStack() {
+function NewsFeedStack({navigation}) {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="NewsFeed" component={NewsFeed} options={{ title: 'ABC',headerStyle: {
-            backgroundColor: 'black',
-          }, headerTintColor: '#fff',
-          headerTitleStyle: {
-            fontWeight: 'bold',
-          },}}></Stack.Screen>
+      <Stack.Screen name="NewsFeed" component={NewsFeed}  
+       options={{
+         title:'Gündem',
+         headerTitleAlign:"center",
+            headerLeft: () => (
+              <Icon.Button 
+              name="align-left" size={20}  color="black"  backgroundColor="white" onPress={() => navigation.openDrawer()} >
+               </Icon.Button>
+            )
+          }}></Stack.Screen>
+
+    </Stack.Navigator>
+  );
+}
+
+function CategoryStack({navigation}) {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Categories" component={Categories}options={{ title: 'Kategoriler',headerTitleAlign:"center",
+            headerLeft: () => (
+              <Icon.Button 
+              name="align-left" size={20}  color="black"  backgroundColor="white" onPress={() => navigation.openDrawer()} >
+               </Icon.Button>
+            )}}></Stack.Screen>
       <Stack.Screen name="test" component={test}></Stack.Screen>
     </Stack.Navigator>
   );
 }
 
-function FavoritesStack() {
+function RegisterStack({navigation}) {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Favorites" component={Login}></Stack.Screen>
-      <Stack.Screen name="test" component={test}></Stack.Screen>
+      <Stack.Screen
+        name="Register"
+        component={Register}
+        options={{ title: 'Kayıt',headerTitleAlign:"center",
+        headerLeft: () => (
+          <Icon.Button 
+          name="chevron-left" size={20}  color="black"  backgroundColor="white" onPress={() => navigation.goBack()} >
+           </Icon.Button>
+        ) }}
+      />
     </Stack.Navigator>
   );
 }
-
 export default function AppTabNavigation() {
   return (
     <NavigationContainer>
       <Drawer.Navigator>
-        <Drawer.Screen name="NewsFeed" component={NewsTabs}></Drawer.Screen>
         <Drawer.Screen
-          name="Favorites"
-          component={favoriteTabs}
+          name="Kategoriler"
+          component={CategoryTabs}
+          options={{}}
         ></Drawer.Screen>
         <Drawer.Screen
-          name="Login"
-          component={Login}
+          name="Hesabım"
+          component={RegisterStack}
+
         ></Drawer.Screen>
       </Drawer.Navigator>
     </NavigationContainer>
