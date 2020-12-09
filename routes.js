@@ -9,9 +9,11 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import NewsFeed from "./screens/NewsFeed";
-import test from "./screens/test";
+import test from "./screens/CategoryFeed";
 import Categories from "./screens/Categories";
 import Register from "./screens/Register"
+import Details from "./screens/Details";
+import CategoryFeed from "./screens/CategoryFeed";
 const Drawer = createDrawerNavigator();
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -85,8 +87,8 @@ function NewsFeedStack({navigation}) {
               name="align-left" size={20}  color="black"  backgroundColor="white" onPress={() => navigation.openDrawer()} >
                </Icon.Button>
             )
-          }}></Stack.Screen>
-
+          }}/>
+       <Stack.Screen name="Details" component={Details} options={{title:""}} /> 
     </Stack.Navigator>
   );
 }
@@ -99,8 +101,8 @@ function CategoryStack({navigation}) {
               <Icon.Button 
               name="align-left" size={20}  color="black"  backgroundColor="white" onPress={() => navigation.openDrawer()} >
                </Icon.Button>
-            )}}></Stack.Screen>
-      <Stack.Screen name="test" component={test}></Stack.Screen>
+            )}}/>
+      <Stack.Screen name="CategoryFeed" component={CategoryFeed} options={({route})=>({title:route.params.name})}/>
     </Stack.Navigator>
   );
 }
@@ -121,6 +123,8 @@ function RegisterStack({navigation}) {
     </Stack.Navigator>
   );
 }
+
+
 export default function AppTabNavigation() {
   return (
     <NavigationContainer>

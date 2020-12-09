@@ -18,7 +18,7 @@ import Newsapi from "../utils/newsapi";
 import { max } from "react-native-reanimated";
 
 
-function  test  ({route,navigation}){
+function  CategoryFeed  ({route,navigation}){
   const {country,category,q,language}  = route.params;
   console.log(route.params);
     return (
@@ -31,7 +31,7 @@ function  test  ({route,navigation}){
     );
   
 }
-export default test;
+export default CategoryFeed;
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#ECECEC",

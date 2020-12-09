@@ -10,27 +10,26 @@ import {
   ActivityIndicator,
   Button,
 } from "react-native";
-import { LinearGradient } from 'expo-linear-gradient';
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
-import test from "./CategoryFeed";
+
 import Newsapi from "../utils/newsapi";
-import { max } from "react-native-reanimated";
 
 
-const  NewsFeed = ({navigation})=>{
-  
+
+function  Details  ({route,navigation}){
+    const {item}  = route.params;
+    console.log(item)
+    
     return (
       <ScrollView >
       <View style={styles.container}>
-      <Newsapi  country="tr" category="general" />
+      <Text> {item.description} </Text>
+
       </View>
       </ScrollView>
     );
   
 }
-export default NewsFeed;
+export default Details;
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#ECECEC",

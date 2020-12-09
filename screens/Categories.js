@@ -14,70 +14,66 @@ import {
   Dimensions
 } from "react-native";
 import Newsapi from "../utils/newsapi";
-import test from "./test";
+import test from "./CategoryFeed";
 
 const image={uri:""};
 
 function Categories ({navigation}) {
 
     return (
+      <ScrollView >
       <View style={{flexWrap:"wrap",flexDirection:"row"}} >
      <TouchableHighlight 
-     onPress={() => {   navigation.navigate('test', {  country:"tr", category:"health",  });}}>
+     onPress={() => {   navigation.navigate('CategoryFeed', {  country:"tr", category:"health",name:"Sağlık"  });}}>
      <ImageBackground resizeMode="cover" style={styles.logo} source={require('../assets/Health.webp')}>    
      <Text style={styles.title}>Sağlık</Text>
      </ImageBackground>
      </TouchableHighlight>
 
      <TouchableHighlight 
-     onPress={() => {   navigation.navigate('test', {  country:"tr", category:"sports",  });}}>
+     onPress={() => {   navigation.navigate('CategoryFeed', {  country:"tr", category:"sports",name:"Spor"  });}}>
      <ImageBackground resizeMode="cover" style={styles.logo} source={require('../assets/Sports.webp')}>    
      <Text style={styles.title}>Spor</Text>
      </ImageBackground>
      </TouchableHighlight>
 
      <TouchableHighlight 
-     onPress={() => {   navigation.navigate('test', {  country:"tr", category:"business",  });}}>
+     onPress={() => {   navigation.navigate('CategoryFeed', {  country:"tr", category:"business",name:"Ekonomi"  });}}>
      <ImageBackground resizeMode="cover" style={styles.logo} source={require('../assets/Business.webp')}>    
      <Text style={styles.title}>Ekonomi</Text>
      </ImageBackground>
      </TouchableHighlight>
       
      <TouchableHighlight 
-     onPress={() => {   navigation.navigate('test', { q:"müzik",language:"tr"});}}>
+     onPress={() => {   navigation.navigate('CategoryFeed', { q:"müzik",language:"tr",name:"Müzik"});}}>
      <ImageBackground resizeMode="cover" style={styles.logo} source={require('../assets/Music.jpg')}>    
      <Text style={styles.title}>Müzik</Text>
      </ImageBackground>
      </TouchableHighlight>
      
      <TouchableHighlight 
-     onPress={() => {   navigation.navigate('test', {  country:"tr", category:"technology",  });}}>
+     onPress={() => {   navigation.navigate('CategoryFeed', {  country:"tr", category:"technology",name:"Teknoloji" });}}>
      <ImageBackground resizeMode="cover" style={styles.logo} source={require('../assets/Technology.jpg')}>    
      <Text style={styles.title}> Teknoloji</Text>
      </ImageBackground>
      </TouchableHighlight>
      
      <TouchableHighlight 
-     onPress={() => {   navigation.navigate('test', { q:"eğitim",language:"tr"});}}>
+     onPress={() => {   navigation.navigate('CategoryFeed', { q:"eğitim",language:"tr",name:"Eğitim"});}}>
      <ImageBackground resizeMode="cover" style={styles.logo} source={require('../assets/Education.jpg')}>    
      <Text style={styles.title}>Eğitim</Text>
      </ImageBackground>
      </TouchableHighlight>
 
      <TouchableHighlight 
-     onPress={() => {   navigation.navigate('test', { q:"astroloji",language:"tr"});}}>
+     onPress={() => {   navigation.navigate('CategoryFeed', { q:"astroloji",language:"tr",name:"Astroloji"});}}>
      <ImageBackground resizeMode="cover" style={styles.logo} source={require('../assets/Astroloji.jpg')}>    
      <Text style={styles.title}>Astroloji</Text>
      </ImageBackground>
      </TouchableHighlight>
 
-     <TouchableHighlight 
-     onPress={() => {   navigation.navigate('test', { q:"hava durumu",language:"tr"});}}>
-     <ImageBackground resizeMode="cover" style={styles.logo} source={require('../assets/Education.jpg')}>    
-     <Text style={styles.title}>Eğitim</Text>
-     </ImageBackground>
-     </TouchableHighlight>
       </View>
+      </ScrollView>
     );
   
 }
@@ -87,7 +83,7 @@ const styles = StyleSheet.create({
   logo: {
     backgroundColor: '#056ecf',
     width: Dimensions.get('window').width/2,
-    height:Dimensions.get('window').width/2.2,
+    height:Dimensions.get('window').width/2,
     justifyContent: 'center'
   },
   title:{

@@ -9,7 +9,7 @@ const newsapi = ({country,q=null,category=null,language="tr"}) => {
   const [headlines, setHeadlines] = useState({});
 
  var url="";
-  const API_KEY = '0eae0ab10c7a476886f9d197b4ff8f10';
+  const API_KEY = '171d4227fd594f519a369e328002c905';
   console.log(q);
   if(category!=null)
   {  url = `https://newsapi.org/v2/top-headlines?category=${category}&country=${country}&apiKey=${API_KEY}`}
