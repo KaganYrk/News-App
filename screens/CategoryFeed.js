@@ -22,12 +22,12 @@ function  CategoryFeed  ({route,navigation}){
   const {country,category,q,language}  = route.params;
   console.log(route.params);
     return (
-      <ScrollView >
+      
       <View style={styles.container}>
       <Newsapi  q={q} language={language} country={country} category={category} />
 
       </View>
-      </ScrollView>
+      
     );
   
 }

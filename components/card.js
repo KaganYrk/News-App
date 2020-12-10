@@ -1,4 +1,4 @@
-import {Button, Image, ImageBackground, Modal, StyleSheet,Text,TouchableHighlight,View,SafeAreaView} from 'react-native';
+import {Button, Image, ImageBackground, Modal, StyleSheet,Text,TouchableHighlight,View,SafeAreaView, Platform} from 'react-native';
 import { WebView } from 'react-native-webview';
 import PropTypes from 'prop-types';
 import React,{useState}from 'react';
@@ -21,13 +21,13 @@ export default function card({text,item}){
         <View> 
              
             <ImageBackground style={{width:"100%"}}source={{ uri: item.urlToImage }}>   
-            <Modal onRequestClose={()=>{setModalVisible(!modalVisible)}} visible={modalVisible}><SafeAreaView style={styles.container}><Button  title="İOSLU PEZEVENKLER İÇİN GERİ TUŞU" onPress={()=>{setModalVisible(!modalVisible)}}></Button><WebView source={{ uri: item.url }} /></SafeAreaView></Modal>
+       
             <TouchableHighlight     onPress={() => {
                 setModalVisible(!modalVisible);
               }}>  
-              
+
             <View style={{opacity:0.8,backgroundColor:"black"}} >  
-            
+            <Modal onRequestClose={()=>{setModalVisible(!modalVisible)}} visible={modalVisible}><SafeAreaView style={styles.container}><WebView source={{ uri: item.url }} /></SafeAreaView></Modal>
             <Text numberOfLines={2} style={styles.text}>{titlewithoutbrand[0]} </Text>
             <View style={{flexDirection:"row",justifyContent:"space-between"}}>
             <Text style={{color:"#E83338",opacity:1,fontWeight:"900",borderRadius:5,marginBottom:10,marginTop:10,fontSize:15,marginLeft:3}}> {splitsource[0]}</Text>

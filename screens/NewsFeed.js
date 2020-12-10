@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import React from "react";
+import React,{useEffect} from "react";
 import {
   StyleSheet,
   Text,
@@ -20,6 +20,7 @@ import { max } from "react-native-reanimated";
 
 
 const  NewsFeed = ({navigation})=>{
+ 
   
     return (
       <ScrollView >

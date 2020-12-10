@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "211482384964",
+    "project_id": "mobilproje-8d078",
+    "storage_bucket": "mobilproje-8d078.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:211482384964:android:16b4cab8d8fecf422f7a11",
+        "android_client_info": {
+          "package_name": "com.kagan.mobil"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "211482384964-ivgaj4gmmr509rtsvhm7sn0b24lok57q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDd2W-wrk9YmjGg1p8qZko7iesMx7noCj0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "211482384964-ivgaj4gmmr509rtsvhm7sn0b24lok57q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
