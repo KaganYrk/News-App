@@ -17,7 +17,7 @@ import Newsapi from "../utils/newsapi";
 
 function  Details  ({route,navigation}){
     const {item}  = route.params;
-    console.log(item)
+    
     
     return (
       <ScrollView >

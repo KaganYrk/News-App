@@ -13,6 +13,10 @@ import {
 } from "react-native";
 import Firebase from '../utils/firebase';
 import { Component } from "react";
+import AppTabNavigation from "../routes";
+import App from "../App";
+
+
 
 
 export default class Register extends Component{  
@@ -21,24 +25,27 @@ export default class Register extends Component{
       password:'',
       login:false
    }
-componentDidMount=()=>{ 
    
- 
-    // Initialize Firebase
-    
-    Firebase.auth().onAuthStateChanged(auth=>{
-       if(auth){
-console.log('giris yapıldı');
-      } else{
-         console.log('giris yapılmadı');
-      }
-    })
-   }
-   kayitol=()=>{
-      Firebase.auth().createUserWithEmailAndPassword(this.state.email,this.state.password)
+
+   giris=()=>{ Firebase.auth().signOut();
+      Firebase.auth().signInWithEmailAndPassword(this.state.email,this.state.password)
+      Firebase.auth().onAuthStateChanged(auth=>{
+         if(auth){
+           
+           console.log('giris a');
+     
+          
+  
+        } else{
+           console.log('giris yapılmadı');
+        }
+      })
     }
+
    render(){  
+
    return(
+      
       <View>  
       <TextInput
       style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
@@ -51,10 +58,10 @@ console.log('giris yapıldı');
     value={this.state.password}
   />
   <TouchableOpacity
-  onPress={()=> this.kayitol()}
-  title="Learn More"
+  onPress={()=> this.giris()}
+  title="Giriş"
   color="#841584"
-  accessibilityLabel="Learn more about this purple button"
+  accessibilityLabel="giris"
   style={{width:1000, height:200,backgroundColor:"black"}}
 />
    </View>
