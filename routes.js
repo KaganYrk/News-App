@@ -1,12 +1,7 @@
-import { StatusBar } from "expo-status-bar";
+
 import React, { useState, useEffect } from "react";
 import {
   StyleSheet,
-  Text,
-  View,
-  SafeAreaView,
-  ScrollView,
-  Button,
 } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
@@ -22,6 +17,7 @@ import Login from "./screens/Login";
 import Details from "./screens/Details";
 import CategoryFeed from "./screens/CategoryFeed";
 import { AuthContext } from "./context";
+import Favorites from "./screens/Favorites";
 
 const Drawer = createDrawerNavigator();
 const Tab = createBottomTabNavigator();
@@ -240,6 +236,7 @@ export default function AppTabNavigation({ navigation }) {
             component={CategoryTabs}
           ></Drawer.Screen>
           <Drawer.Screen name="Hesabım" component={ProfileStack}></Drawer.Screen>
+          <Drawer.Screen name="İşaretlediklerim" component={Favorites}></Drawer.Screen>
         </Drawer.Navigator>
       </NavigationContainer>
     </AuthContext.Provider>

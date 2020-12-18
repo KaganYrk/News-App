@@ -1,17 +1,14 @@
-import {Button, Image, ImageBackground, Modal, StyleSheet,Text,TouchableHighlight,View,SafeAreaView, Platform} from 'react-native';
+import { ImageBackground, Modal, StyleSheet,Text,TouchableHighlight,View,SafeAreaView, Platform} from 'react-native';
 import { WebView } from 'react-native-webview';
-import PropTypes from 'prop-types';
-import React,{useState}from 'react';
-import * as Font from 'expo-font';
-import { TouchableOpacity } from 'react-native-gesture-handler';
-import test from '../screens/CategoryFeed';
-import { useNavigation } from '@react-navigation/native';
-import Categories from '../screens/Categories';
-import Details from '../screens/Details';
-import { render } from 'react-dom';
 
-export default function card({text,item}){
+import React,{useState}from 'react';
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { useNavigation } from '@react-navigation/native';
+import Firebase from "../utils/firebase";
+ 
+export default function card({item}){
     const [modalVisible, setModalVisible] = useState(false);
+    const [iconName, seticonName] = useState("heart-outline");
 
     const navigation = useNavigation();
     var titlewithoutbrand = (item.title).split("-");
@@ -21,21 +18,31 @@ export default function card({text,item}){
         <View> 
              
             <ImageBackground style={{width:"100%"}}source={{ uri: item.urlToImage }}>   
-       
-            <TouchableHighlight     onPress={() => {
-                setModalVisible(!modalVisible);
-              }}>  
-
-            <View style={{opacity:0.8,backgroundColor:"black"}} >  
-            <Modal onRequestClose={()=>{setModalVisible(!modalVisible)}} visible={modalVisible}><SafeAreaView style={styles.container}><WebView source={{ uri: item.url }} /></SafeAreaView></Modal>
-            <Text numberOfLines={2} style={styles.text}>{titlewithoutbrand[0]} </Text>
-            <View style={{flexDirection:"row",justifyContent:"space-between"}}>
-            <Text style={{color:"#E83338",opacity:1,fontWeight:"900",borderRadius:5,marginBottom:10,marginTop:10,fontSize:15,marginLeft:3}}> {splitsource[0]}</Text>
-            <Text style={{color:"#E83338",marginRight:10,borderRadius:5,marginBottom:10,marginTop:10,fontSize:12,fontSize:12}}> {EditTime(item.publishedAt)}</Text>
-            </View>
-          
-            </View>
-            </TouchableHighlight>
+              <TouchableHighlight     onPress={() => {
+                  setModalVisible(!modalVisible);
+                }}>  
+                <View style={{opacity:0.8,backgroundColor:"black",flexDirection:"column"} } >  
+                  <Modal onRequestClose={()=>{setModalVisible(!modalVisible)}} visible={modalVisible}><SafeAreaView style={styles.container}><WebView source={{ uri: item.url }} /></SafeAreaView></Modal>
+                  <View style={{flexDirection:'row',justifyContent:"space-evenly"}}>  
+                  <Text numberOfLines={2}  style={{color:"white",justifyContent:"flex-start",flex:1}}>{titlewithoutbrand[0]} </Text>
+                  <MaterialCommunityIcons   onPress={() => {
+                  (iconName=="heart-off")?
+                 ( seticonName("heart-outline"),
+                  Firebase.database().ref('users/' + Firebase.auth().currentUser.uid+'/'+(item.publishedAt).trim()).remove()) :
+                 ( seticonName("heart-off"),
+                 Firebase.database().ref('users/' + Firebase.auth().currentUser.uid+'/'+(item.publishedAt).trim()).set({
+                  item:item
+              }))
+                
+                }} name={iconName} size={24} color="white"  />
+                  </View>
+                  <View style={{flexDirection:"row",justifyContent:"space-between"}}>
+                    <Text style={{color:"#E83338",opacity:1,fontWeight:"900",borderRadius:5,marginBottom:10,marginTop:10,fontSize:15,marginLeft:3}}> {splitsource[0]}</Text>
+                    <Text style={{color:"#E83338",marginRight:10,borderRadius:5,marginBottom:10,marginTop:10,fontSize:12,fontSize:12}}> {EditTime(item.publishedAt)}</Text>
+                  </View>
+              
+                </View>
+              </TouchableHighlight>
             </ImageBackground> 
    
             </View>
@@ -43,12 +50,7 @@ export default function card({text,item}){
 }
 
    const styles= StyleSheet.create({
-        text:{
-            alignSelf:'flex-start',
-            color:'white',
-            paddingLeft:5,
-            paddingTop:10,
-          },
+
           container: {
             flex: 1,
           

@@ -1,17 +1,14 @@
-import { StatusBar } from "expo-status-bar";
+
 import React from "react";
 import {
   StyleSheet,
   Text,
   View,
-  onPress,
-  SafeAreaView,
+
   ScrollView,
-  ActivityIndicator,
-  Button,
+
 } from "react-native";
 
-import Newsapi from "../utils/newsapi";
 
 
 
