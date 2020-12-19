@@ -236,7 +236,7 @@ export default function AppTabNavigation({ navigation }) {
             component={CategoryTabs}
           ></Drawer.Screen>
           <Drawer.Screen name="Hesabım" component={ProfileStack}></Drawer.Screen>
-          <Drawer.Screen name="İşaretlediklerim" component={Favorites}></Drawer.Screen>
+          <Drawer.Screen name="İşaretlediklerim" component={Favorites} ></Drawer.Screen>
         </Drawer.Navigator>
       </NavigationContainer>
     </AuthContext.Provider>

@@ -1,4 +1,4 @@
-import { ImageBackground, Modal, StyleSheet,Text,TouchableHighlight,View,SafeAreaView, Platform, ScrollView} from 'react-native';
+import { ImageBackground, Modal, StyleSheet,Text,TouchableHighlight,View,SafeAreaView, Platform, ScrollView, Button} from 'react-native';
 import { WebView } from 'react-native-webview';
 
 import React,{useState,useEffect}from 'react';
@@ -32,7 +32,7 @@ const output=[];
                   setModalVisible(!modalVisible);
                 }}>  
                 <View style={{opacity:0.8,backgroundColor:"black",flexDirection:"column"} } >  
-                  <Modal onRequestClose={()=>{setModalVisible(!modalVisible)}} visible={modalVisible}><SafeAreaView style={styles.container}><WebView source={{ uri: item.url }} /></SafeAreaView></Modal>
+                  <Modal onRequestClose={()=>{setModalVisible(!modalVisible)}} visible={modalVisible}><SafeAreaView style={styles.container}><Button  title="İOS İÇİN GERİ TUŞU" onPress={()=>{setModalVisible(!modalVisible)}}></Button><WebView source={{ uri: item.url }} /></SafeAreaView></Modal>
                   <View style={{flexDirection:'row',justifyContent:"space-evenly"}}>  
                   <Text numberOfLines={2}  style={{color:"white",justifyContent:"flex-start",flex:1}}>{item.title} </Text>
                   <MaterialCommunityIcons   onPress={() => {
@@ -66,6 +66,6 @@ const styles= StyleSheet.create({
       flex: 1,
     
   
-      paddingTop: Platform.OS === 'ios' ? 28 : 0
+      paddingTop: Platform.OS === 'ios' ? 200 : 0
     },
 })

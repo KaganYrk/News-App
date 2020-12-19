@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { FlatList } from 'react-native-gesture-handler';
+import { FlatList } from 'react-native';
+
 import Card from '../components/card';
 
 
