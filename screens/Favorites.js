@@ -25,7 +25,8 @@ const output=[];
      
      
  return (
-    <ScrollView >
+  <SafeAreaView styles={flex=1}>  
+   
         <View> 
         {array.map(item =>   <ImageBackground style={{width:"100%"}}source={{ uri: item.urlToImage }}>   
               <TouchableHighlight     onPress={() => {
@@ -56,7 +57,8 @@ const output=[];
       
        
         </View>
-        </ScrollView >
+        
+        </SafeAreaView>
       )
     }
 export default Favorites;
@@ -66,6 +68,7 @@ const styles= StyleSheet.create({
       flex: 1,
     
   
-      paddingTop: Platform.OS === 'ios' ? 200 : 0
+      paddingTop: Platform.OS === 'ios' ? 200 : 0,
+     
     },
 })

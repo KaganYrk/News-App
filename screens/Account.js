@@ -1,5 +1,5 @@
 
-import React from "react";
+
 import {
   Text,
   View,
@@ -7,19 +7,22 @@ import {
 } from "react-native";
 import Firebase from '../utils/firebase';
 import { Component } from "react";
+import React from "react";
+import { addNotificationReceivedListener, getExpoPushTokenAsync } from "expo-notifications";
+import * as Permissions from 'expo-permissions';
 
-
-
-export default class Account extends Component{  
-    
-   render(){  
+  
+export default class  Account extends Component{  
+  
+render() {
 
    return(
-       <View>   
-       <Text>   {Firebase.auth().currentUser.uid} </Text>
+       <View >   
+       <Text>   {Firebase.auth().currentUser.email} </Text>
   
-      <Button title="çıkış"onPress={()=>{Firebase.auth().signOut()}}/>
+      <Button  title="çıkış"  onPress={()=>{Firebase.auth().signOut()}}/>
       </View>
-   );
-}
+
+   )
+   }
 }
