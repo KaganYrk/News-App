@@ -25,9 +25,10 @@ const output=[];
      
      
  return (
+  
   <SafeAreaView styles={flex=1}>  
-   
-        <View> 
+    <ScrollView>  
+     
         {array.map(item =>   <ImageBackground style={{width:"100%"}}source={{ uri: item.urlToImage }}>   
               <TouchableHighlight     onPress={() => {
                   setModalVisible(!modalVisible);
@@ -56,9 +57,10 @@ const output=[];
     
       
        
-        </View>
-        
+     
+        </ScrollView>
         </SafeAreaView>
+       
       )
     }
 export default Favorites;

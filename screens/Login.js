@@ -1,17 +1,19 @@
 import React from "react";
-import { View, TextInput, TouchableOpacity } from "react-native";
+import { View, Text,TextInput, TouchableOpacity, Dimensions, Modal,} from "react-native";
 import Firebase from "../utils/firebase";
 import { Component } from "react";
+const screenwidth =Dimensions.get('window').width
 
 export default class Register extends Component {
   state = {
     email: "",
     password: "",
     login: false,
+    modalVisible:false,
   };
 
   giris = () => {
-    Firebase.auth().signOut();
+    
     Firebase.auth().signInWithEmailAndPassword(
       this.state.email,
       this.state.password
@@ -25,27 +27,112 @@ export default class Register extends Component {
       }
     });
   };
+kayitol=()=>{
+  Firebase.auth().createUserWithEmailAndPassword(this.state.email,this.state.password);
 
+}
+  setmodalvisible=()=>{
+   this.setState({modalVisible:!(this.state.modalVisible)})
+  }
+  
   render() {
     return (
-      <View>
+      <View>   
+        <View style={{ flex: 1,
+    justifyContent: "center",
+    alignItems: "center",}}>  
+      <Modal   animationType="slide"
+      
+     transparent = {true}  
+   
+      visible={this.state.modalVisible}> 
+      <View style={{backgroundColor:" rgba(0, 0, 0, 0.46)",flex:1}}>    
+      <View style={{ 
+   borderColor:"black",
+  backgroundColor : "white",   
+ 
+  width: '82%', 
+  height:'40%', 
+
+  borderWidth: 1,  
+  borderColor: '#fff',    
+   
+   justifyContent:"center", alignItems:"center",flex:1}}>  
+      <Text>E posta</Text>  
+   
+      <TextInput
+        style={{width:(screenwidth*2)/3, height: 40, borderColor: "gray", borderWidth: 1 }}
+        onChangeText={(email) => this.setState({ email: email.trim() })}
+        value={this.state.email}
+      />
+      <Text>Şifre</Text>  
+      <TextInput
+        style={{width:(screenwidth*2)/3, height: 40, borderColor: "gray", borderWidth: 1 }}
+        onChangeText={(password) => this.setState({ password: password })}
+        value={this.state.password}
+      />
+
+      <TouchableOpacity
+        onPress={() => this.kayitol()}
+        style={{ marginTop:20,borderRadius:2,width:(screenwidth*2)/3,height: 50, backgroundColor: "black" , justifyContent:"center",alignItems: "center",  padding: 10 }}
+        
+      >
+         <Text style={{color:"white"}}>Kayıt ol</Text>  
+         </TouchableOpacity>
+         <TouchableOpacity
+        onPress={() => {this.setmodalvisible()}}
+      
+       
+        style={{ marginTop:20,borderRadius:2,width:(screenwidth*2)/3,height: 50, backgroundColor: "black" , justifyContent:"center",alignItems: "center",  padding: 10 }}
+        
+      >
+         <Text style={{color:"white"}}>Geri</Text>  
+         </TouchableOpacity>
+         </View>
+         </View>
+      </Modal>
+      
+      </View>
+      <View style={{alignItems:"center",flex:1}}>
+      
+             
+        <Text style={{textAlign: 'right'}} >E posta</Text>  
         <TextInput
-          style={{ height: 40, borderColor: "gray", borderWidth: 1 }}
+          style={{width:(screenwidth*2)/3, height: 40, borderColor: "gray", borderWidth: 1 }}
           onChangeText={(email) => this.setState({ email: email.trim() })}
           value={this.state.email}
         />
+        <Text>Şifre</Text>  
         <TextInput
-          style={{ height: 40, borderColor: "gray", borderWidth: 1 }}
+          style={{width:(screenwidth*2)/3, height: 40, borderColor: "gray", borderWidth: 1 }}
           onChangeText={(password) => this.setState({ password: password })}
           value={this.state.password}
         />
+        
         <TouchableOpacity
           onPress={() => this.giris()}
           title="Giriş"
-          color="#841584"
+          
           accessibilityLabel="giris"
-          style={{ width: 1000, height: 200, backgroundColor: "black" }}
-        />
+          style={{ marginTop:20,borderRadius:2,width:(screenwidth*2)/3,height: 50, backgroundColor: "black" , justifyContent:"center",alignItems: "center",  padding: 10 }}
+          
+        >
+           <Text style={{color:"white"}}>Giriş Yap</Text>  
+           </TouchableOpacity>
+           <TouchableOpacity
+          onPress={() =>   { 
+            this.setmodalvisible()
+            }}
+          title="Giriş"
+          
+          accessibilityLabel="giris"
+          style={{ marginTop:20,borderRadius:2,width:(screenwidth*2)/3,height: 50, backgroundColor: "black" , justifyContent:"center",alignItems: "center",  padding: 10 }}
+          
+        >
+           <Text style={{color:"white"}}>Kayit ol</Text>  
+           </TouchableOpacity>
+           
+      </View>
       </View>
     );
   }
