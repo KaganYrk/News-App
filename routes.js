@@ -1,8 +1,5 @@
-
 import React, { useState, useEffect } from "react";
-import {
-  StyleSheet,
-} from "react-native";
+import { StyleSheet } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -23,43 +20,7 @@ const Drawer = createDrawerNavigator();
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
-function NewsTabs() {
-  return (
-    <Tab.Navigator
-      screenOptions={({ route }) => ({
-        tabBarIcon: ({ focused, color, size }) => {
-          let iconName;
 
-          if (route.name === "NewsFeed") {
-            iconName = focused ? "home" : "home-outline";
-          } else if (route.name === "Categories") {
-            iconName = focused ? "view-list" : "format-list-bulleted";
-          }
-
-          // You can return any component that you like here!
-          return (
-            <MaterialCommunityIcons name={iconName} size={20} color={color} />
-          );
-        },
-      })}
-      tabBarOptions={{
-        activeTintColor: "red",
-        inactiveTintColor: "black",
-      }}
-    >
-      <Tab.Screen
-        name="NewsFeed"
-        component={NewsFeedStack}
-        options={{ title: "" }}
-      ></Tab.Screen>
-      <Tab.Screen
-        name="Categories"
-        component={CategoryStack}
-        options={{ title: "" }}
-      ></Tab.Screen>
-    </Tab.Navigator>
-  );
-}
 function CategoryTabs() {
   return (
     <Tab.Navigator
@@ -83,6 +44,7 @@ function CategoryTabs() {
       tabBarOptions={{
         activeTintColor: "red",
         inactiveTintColor: "black",
+     
       }}
     >
       <Tab.Screen
@@ -108,6 +70,13 @@ function NewsFeedStack({ navigation }) {
         options={{
           title: "Gündem",
           headerTitleAlign: "center",
+          headerStyle: {
+            backgroundColor: 'white',
+          },
+          headerTintColor: 'black',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
           headerLeft: () => (
             <Icon.Button
               name="align-left"
@@ -137,6 +106,9 @@ function CategoryStack({ navigation }) {
         options={{
           title: "Kategoriler",
           headerTitleAlign: "center",
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
           headerLeft: () => (
             <Icon.Button
               name="align-left"
@@ -226,23 +198,51 @@ export default function AppTabNavigation({ navigation }) {
   if (initializing) {
     return null;
   }
+  
   return user ? (
-   
+    
     <AuthContext.Provider value={user}>
       <NavigationContainer>
-        <Drawer.Navigator>
+        <Drawer.Navigator 
+         drawerStyle={{
+          backgroundColor:"black"
+        }}
+         drawerContentOptions={{
+          activeTintColor: 'white',
+          inactiveBackgroundColor:"black",
+          inactiveTintColor:"white",
+        
+        }}
+        >
           <Drawer.Screen
             name="Kategoriler"
             component={CategoryTabs}
           ></Drawer.Screen>
-          <Drawer.Screen name="Hesabım" component={ProfileStack}></Drawer.Screen>
-          <Drawer.Screen name="İşaretlediklerim" component={Favorites} options={{headerShown:true}}></Drawer.Screen>
+          <Drawer.Screen
+            name="Hesabım"
+            component={ProfileStack}
+          ></Drawer.Screen>
+          <Drawer.Screen
+            name="İşaretlediklerim"
+            component={Favorites}
+            options={{ headerShown: true }}
+          ></Drawer.Screen>
         </Drawer.Navigator>
       </NavigationContainer>
     </AuthContext.Provider>
   ) : (
     <NavigationContainer>
-      <Drawer.Navigator>
+      <Drawer.Navigator 
+      drawerStyle={{
+        backgroundColor:"black"
+      }}
+       drawerContentOptions={{
+        activeTintColor: 'white',
+        inactiveBackgroundColor:"black",
+        inactiveTintColor:"white",
+      
+      }}
+      >
         <Drawer.Screen
           name="Kategoriler"
           component={CategoryTabs}

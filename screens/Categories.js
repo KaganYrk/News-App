@@ -123,23 +123,7 @@ function Categories({ navigation }) {
           </ImageBackground>
         </TouchableHighlight>
 
-        <TouchableHighlight
-          onPress={() => {
-            navigation.navigate("CategoryFeed", {
-              q: "astroloji",
-              language: "tr",
-              name: "Astroloji",
-            });
-          }}
-        >
-          <ImageBackground
-            resizeMode="cover"
-            style={styles.logo}
-            source={require("../assets/Astroloji.jpg")}
-          >
-            <Text style={styles.title}>Astroloji</Text>
-          </ImageBackground>
-        </TouchableHighlight>
+        
       </View>
     </ScrollView>
   );

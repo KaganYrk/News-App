@@ -14,6 +14,16 @@ export default function card({item}){
     var titlewithoutbrand = (item.title).split("-");
     var splitsource = (item.source.name).split(".");
 
+ var concattitle="";
+
+
+  if(Object.keys(titlewithoutbrand).length>1)
+  titlewithoutbrand.splice(Object.keys(titlewithoutbrand).length-1,1)
+    for (var i = 0; i < Object.keys(titlewithoutbrand).length; i++) {
+    
+    concattitle=concattitle+titlewithoutbrand[i]
+} 
+
     return(
         <View> 
              
@@ -25,7 +35,7 @@ export default function card({item}){
                   <Modal onRequestClose={()=>{setModalVisible(!modalVisible)}} visible={modalVisible}><SafeAreaView style={styles.container}><Button  title="İOS İÇİN GERİ TUŞU" onPress={()=>{setModalVisible(!modalVisible)}}></Button>
                   <WebView source={{ uri: item.url }} /></SafeAreaView></Modal>
                   <View style={{flexDirection:'row',justifyContent:"space-evenly"}}>  
-                  <Text numberOfLines={2}  style={{color:"white",justifyContent:"flex-start",flex:1}}>{titlewithoutbrand[0]} </Text>
+                  <Text numberOfLines={2}  style={{marginLeft:10,marginTop:4,color:"white",justifyContent:"flex-start",flex:1}}>{concattitle} </Text>
                   <MaterialCommunityIcons   onPress={() => {
                   (iconName=="heart-off")?
                  ( seticonName("heart-outline"),
@@ -54,8 +64,6 @@ export default function card({item}){
 
           container: {
             flex: 1,
-          
-        
             paddingTop: Platform.OS === 'ios' ? 60 : 0
           },
     })
