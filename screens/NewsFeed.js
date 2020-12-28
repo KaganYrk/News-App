@@ -26,7 +26,7 @@ const NewsFeed = ({ navigation }) => {
       }
     >
       <View style={styles.container}>
-      <StatusBar backgroundColor="white"  hidden={false} barStyle={"dark-content"} />
+        <StatusBar backgroundColor="white" hidden={false} barStyle={"dark-content"} />
         <Newsapi country="tr" category="general" />
       </View>
     </ScrollView>

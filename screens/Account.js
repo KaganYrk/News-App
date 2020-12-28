@@ -1,4 +1,4 @@
-import { Text, View,Dimensions } from "react-native";
+import { Text, View, Dimensions } from "react-native";
 import Firebase from "../utils/firebase";
 import { Component } from "react";
 import React from "react";
@@ -9,7 +9,7 @@ const screenwidth = Dimensions.get("window").width;
 export default class Account extends Component {
   render() {
     return (
-      <View style={{alignItems:"center",flex:1}}>
+      <View style={{ alignItems: "center", flex: 1 }}>
         <Text> {Firebase.auth().currentUser.email} </Text>
 
         <TouchableHighlight
@@ -27,7 +27,7 @@ export default class Account extends Component {
             alignItems: "center",
             padding: 10,
           }}
-        ><Text style={{color:"white"}}>Çıkış Yap</Text></TouchableHighlight>
+        ><Text style={{ color: "white" }}>Çıkış Yap</Text></TouchableHighlight>
       </View>
     );
   }

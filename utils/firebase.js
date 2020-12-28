@@ -1,5 +1,5 @@
 import firebase from 'firebase';
-const config={
+const config = {
     apiKey: "AIzaSyDSsfiyDntbp_DKBtQEhPBAhfVaH6e_y_k",
     authDomain: "mobilproje-8d078.firebaseapp.com",
     projectId: "mobilproje-8d078",

@@ -123,7 +123,7 @@ function Categories({ navigation }) {
           </ImageBackground>
         </TouchableHighlight>
 
-        
+
       </View>
     </ScrollView>
   );

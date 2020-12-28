@@ -12,25 +12,25 @@ import {
 
 
 
-function  Details  ({route,navigation}){
-    const {item}  = route.params;
-    
-    
-    return (
-      <ScrollView >
+function Details({ route, navigation }) {
+  const { item } = route.params;
+
+
+  return (
+    <ScrollView >
       <View style={styles.container}>
-      <Text> {item.description} </Text>
+        <Text> {item.description} </Text>
 
       </View>
-      </ScrollView>
-    );
-  
+    </ScrollView>
+  );
+
 }
 export default Details;
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#ECECEC",
     justifyContent: "center",
-  
+
   },
 });

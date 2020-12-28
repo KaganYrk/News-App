@@ -31,9 +31,7 @@ export default class App extends React.Component {
     this.listener = addNotificationReceivedListener(this.handleNotification);
   }
 
-  componentWillUnmount() {
-    this.listener && this.listener.remove();
-  }
+ 
 
   handleNotification = ({ origin, data }) => {
     console.log(
@@ -41,7 +39,7 @@ export default class App extends React.Component {
     );
   };
   render() {
-   
+
     return <AppTabNavigation />;
   }
 }

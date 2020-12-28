@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { StyleSheet } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -35,7 +35,7 @@ function CategoryTabs() {
             iconName = focused ? "view-list" : "format-list-bulleted";
           }
 
-          // You can return any component that you like here!
+
           return (
             <MaterialCommunityIcons name={iconName} size={20} color={color} />
           );
@@ -44,7 +44,7 @@ function CategoryTabs() {
       tabBarOptions={{
         activeTintColor: "red",
         inactiveTintColor: "black",
-     
+
       }}
     >
       <Tab.Screen
@@ -198,59 +198,96 @@ export default function AppTabNavigation({ navigation }) {
   if (initializing) {
     return null;
   }
-  
+
   return user ? (
-    
+
     <AuthContext.Provider value={user}>
       <NavigationContainer>
-        <Drawer.Navigator 
-         drawerStyle={{
-          backgroundColor:"black"
-        }}
-         drawerContentOptions={{
-          activeTintColor: 'white',
-          inactiveBackgroundColor:"black",
-          inactiveTintColor:"white",
-        
-        }}
+        <Drawer.Navigator
+
+          drawerStyle={{
+            borderBottomWidth: 50,
+            backgroundColor: "white",
+
+          }}
+          drawerContentOptions={{
+
+            activeTintColor: 'black',
+            inactiveBackgroundColor: "white",
+            inactiveTintColor: "black",
+
+          }}
         >
           <Drawer.Screen
+
             name="Kategoriler"
             component={CategoryTabs}
+            options={{
+              title: 'Kategoriler',
+              drawerIcon: () => (
+                <MaterialCommunityIcons name="format-list-bulleted" size={24} color="#E83338" />
+              )
+            }}
           ></Drawer.Screen>
           <Drawer.Screen
+            options={{
+              title: 'Hesabım',
+              drawerIcon: () => (
+                <MaterialCommunityIcons name="account-circle-outline" size={24} color="#E83338" />
+              )
+            }}
             name="Hesabım"
             component={ProfileStack}
           ></Drawer.Screen>
           <Drawer.Screen
+            options={{
+              headerShown: true,
+              title: 'İşaretlediklerim',
+              drawerIcon: () => (
+                <MaterialCommunityIcons name="account-heart" size={24} color="#E83338" />
+              )
+            }}
             name="İşaretlediklerim"
             component={Favorites}
-            options={{ headerShown: true }}
+
           ></Drawer.Screen>
         </Drawer.Navigator>
       </NavigationContainer>
     </AuthContext.Provider>
   ) : (
-    <NavigationContainer>
-      <Drawer.Navigator 
-      drawerStyle={{
-        backgroundColor:"black"
-      }}
-       drawerContentOptions={{
-        activeTintColor: 'white',
-        inactiveBackgroundColor:"black",
-        inactiveTintColor:"white",
-      
-      }}
-      >
-        <Drawer.Screen
-          name="Kategoriler"
-          component={CategoryTabs}
-        ></Drawer.Screen>
-        <Drawer.Screen name="Giriş" component={LoginStack}></Drawer.Screen>
-      </Drawer.Navigator>
-    </NavigationContainer>
-  );
+      <NavigationContainer>
+        <Drawer.Navigator
+          drawerStyle={{
+            backgroundColor: "white"
+          }}
+          drawerContentOptions={{
+            activeTintColor: 'black',
+            inactiveBackgroundColor: "white",
+            inactiveTintColor: "black",
+
+          }}
+        >
+          <Drawer.Screen
+            name="Kategoriler"
+            component={CategoryTabs}
+            options={{
+              title: 'Kategoriler',
+              drawerIcon: () => (
+                <MaterialCommunityIcons name="format-list-bulleted" size={24} color="#E83338" />
+              )
+            }}
+          ></Drawer.Screen>
+          <Drawer.Screen
+            options={{
+              title: 'Giriş',
+              drawerIcon: () => (
+                <MaterialCommunityIcons name="login" size={24} color="#E83338" />
+              )
+            }}
+            name="Giriş" component={LoginStack}></Drawer.Screen>
+        </Drawer.Navigator>
+      </NavigationContainer>
+    );
 }
 
 const styles = StyleSheet.create({
